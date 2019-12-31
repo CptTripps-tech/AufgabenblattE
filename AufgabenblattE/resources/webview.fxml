@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="E2.WikiBooksController">
+   <children>
+      <GridPane prefHeight="36.0" prefWidth="768.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="0.0" prefWidth="89.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="114.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="98.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="6.0" prefWidth="85.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="152.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="67.0" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="431.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="6.0" prefWidth="85.0" text="Suchbegriff:" GridPane.rowIndex="1" />
+            <TextField fx:id="tfSearchTermf" onAction="#tfonAction" prefHeight="33.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="26.0" prefWidth="84.0" text="Suchen" translateX="7.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="92.0" text="Hinzufügen" translateX="20.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" text="Löschen" translateX="20.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <MenuButton fx:id="menu" mnemonicParsing="false" text="Menü" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+              <items>
+                <MenuItem fx:id="sortMenu" mnemonicParsing="false" onAction="#sortItem" text="Sortieren" />
+                  <MenuItem fx:id="loadMenu" mnemonicParsing="false" onAction="#loadItem" text="Laden" />
+              </items>
+            </MenuButton>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="26.0" prefWidth="103.0" text="Speichern" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <HBox prefHeight="485.0" prefWidth="721.0" VBox.vgrow="ALWAYS">
+         <children>
+            <WebView fx:id="browser" prefHeight="485.0" prefWidth="736.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <GridPane prefHeight="33.0" prefWidth="678.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="10.0" prefWidth="230.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="493.0" minWidth="10.0" prefWidth="448.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="contributorLabel" prefHeight="16.0" prefWidth="223.0" />
+            <Label fx:id="timeStampLabel" prefHeight="17.0" prefWidth="319.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>
